@@ -1,4 +1,4 @@
-# AI-Feynman-Reproduction
+# AI-Poincare-Reproduction
 
 本项目为复旦大学石磊老师教授的电动力学的荣誉课项目，尝试复现Max Tegmark教授的prl文章结果
 
