@@ -11,7 +11,7 @@ omega = np.sqrt(k / m)  # 固有角频率 (rad/s)
 x0 = 1.0  # 初始位置 (m)
 p0 = 0.0  # 初始动量 (kg·m/s)
 t_max = 10.0  # 模拟时间 (s)
-N = 1e3
+N = 1e4
 
 dt = (t_max)/N
 # 时间点
