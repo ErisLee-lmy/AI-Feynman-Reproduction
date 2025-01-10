@@ -33,7 +33,7 @@ for i in range(1, len(t)):
     x[i] = x[i - 1] + (p[i] / m) * dt
 
 # 保存相空间轨迹到 CSV 文件
-data = pd.DataFrame({'t': t, 'x': x, 'p': p})
+data = pd.DataFrame({'x': x, 'p': p})
 csv_file = 'harmonic_oscillator_trajectory.csv'
 data.to_csv(csv_file, index=False)
 print(f"相空间轨迹已保存到文件：{csv_file}")
