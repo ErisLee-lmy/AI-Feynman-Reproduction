@@ -9,6 +9,12 @@ lam = L2/L1   #杆长度比L2/L1
 mu = 1.0      #质量比M2/M1
 M = 1+mu
 
+N = 1000
+
+# 生成时间
+t_max =20 
+dt = t_max/N
+t = np.arange(0, t_max, dt)
 
 def derivs(state, t):
     dydx = np.zeros_like(state)
@@ -36,9 +42,6 @@ def  GenerateDoublePendulum():
     '''生成双摆的运动轨迹，在笛卡尔坐标系中'''
 
 
-    # 生成时间
-    dt = 0.01
-    t = np.arange(0, 20, dt)
 
     th1,th2 = 120.0, -10.0  #初始角度
     om1,om2 = 0.0, 0.00       #初始角速度
@@ -58,6 +61,15 @@ def  GenerateDoublePendulum():
 if __name__ == "__main__":
 
     x1,x2,y1,y2 = GenerateDoublePendulum()
+    px1,px2,py1,py2 = np.zeros_like(x1),np.zeros_like(x1),np.zeros_like(x1),np.zeros_like(x1)
+    
+    dp = 1/dt
+    
+    for i in range(1,x1.shape):
+        px1 = (x1[i]-x1[i-1])*dp
+        px2 = (x2[i]-x2[i-1])*dp
+        py1 = (y1[i]-y1[i-1])*dp
+        py2 = (y2[i]-y2[i-1])*dp
     
     plt.scatter(x1,y1,marker='.', label='m1')
     plt.scatter(x2,y2,marker='.', label='m2')
